@@ -3,20 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Harry Sadleir's Personal Site</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-        <script type="text/javascript" src="InitialSketch.js"></script>
-
-        <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+        <link rel="stylesheet" href="src/style.css">
     </head>
     <body>
         <h1>
             Put canvas here
         </h1>
-        <div id="sketch-holder">
+        <div class="container">
             <!-- Our sketch will go here! -->
+            <h1>p5.js meets Typescript</h1>
+			<div id="app"></div>
         </div>
+        <script src="src/InitialSketch.ts"></script>
         <p>
             The canvas is above
         </p>
