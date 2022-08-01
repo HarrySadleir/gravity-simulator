@@ -2,10 +2,10 @@ import P5 from "p5";
 import "p5/lib/addons/p5.dom";
 
 const sketch = (p5: P5) => {
-    let angle = 0;
+    let angle: number = 0;
 
     p5.setup = () => {
-        const canvas = p5.createCanvas(400, 400);
+        const canvas: P5.Renderer = p5.createCanvas(400, 400);
         canvas.parent('app')
 
         p5.angleMode(p5.DEGREES);
