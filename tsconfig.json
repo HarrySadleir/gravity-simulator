@@ -9,7 +9,9 @@
         "es6",
         "dom"
       ],
-      "rootDir": "./src",
+      "outDir": "build",
       "moduleResolution": "node"
-    }
+    },
+    "include": "src/**/*",
+    "exclude": ["build", "dist", "node_modules"]
 }
