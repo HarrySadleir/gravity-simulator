@@ -70,11 +70,11 @@ export default class Body {
     }
 
     updateVel() {
-        this.vel.add(Vector.div(this.acc, tickRate));
+        this.vel.add(this.acc.div(tickRate));
     }
 
     updatePos() {
-        this.pos.add(Vector.div(this.vel, tickRate));
+        this.pos.add(this.vel.div(tickRate));
     }
 
     private getDistance(other: Body): Vector {
