@@ -1,6 +1,6 @@
 class Body {
-    static _bigG = 10;         // Newtons gravitational constatant G
-    static _radMultiplier = 3; // Flat scaler for radius of the body
+    static _bigG = 1;         // Newtons gravitational constatant G
+    static _radMultiplier = 1; // Flat scaler for radius of the body
 
     _pos;  // P5.Vector,   m
     _vel;  // P5.Vector,   m/s
@@ -33,14 +33,16 @@ class Body {
     }
 
     showPath() {
-        stroke(this._color);
         strokeWeight(2);
+        noFill();
         beginShape();
+        let point;
         for(let i in this._path) {
-            const point = this._path[i];
-            vertex(point.x, point.y, point.z);
+            point = this._path[i];
+            stroke(this._color).vertex(point.x, point.y, point.z);
         }
-        endShape();
+        stroke(this._color);
+        endShape(LINES);
     }
 
     // Movement functions for Newton integration
@@ -61,9 +63,12 @@ class Body {
 
     updatePos() {
         this._pos.add(p5.Vector.div(this._vel, tickRate));
+
+        if(this._path.length > 1000) this._path.shift();
+        this._path.push(this._pos.copy());
     }
 
     _getDistance(other) {
-        return p5.Vector.sub(other.pos, this.pos);
+        return p5.Vector.sub(other._pos, this._pos);
     }
 }
