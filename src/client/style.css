@@ -60,3 +60,10 @@ body {
 #initial-values-table .table-title {
     text-align: center;
 }
+
+/* Disable the arrows on number input*/ 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

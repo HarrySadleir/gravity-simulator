@@ -1,4 +1,4 @@
-const bodies = [];
+let bodies = [];
 const tickRate = 30;
 
 let debugEnabled = true;
@@ -46,10 +46,12 @@ function draw() {
 }
 
 function setupDom() {
+    // Place the canvas under app
     const canvas = createCanvas(400, 400, WEBGL);
-    canvas.parent('app')
+    canvas.parent('app');
 
-    const toggleCheckbox = createCheckbox('Show Axis', false)
+    // Add the toggle for axis
+    const toggleCheckbox = createCheckbox('Show Axis', false);
     toggleCheckbox.parent('app');
     toggleCheckbox.changed(() => {
         if (toggleCheckbox.checked()) {
@@ -58,4 +60,44 @@ function setupDom() {
             noDebugMode();
         }
     });
+
+    // Select the add button and add its functionality
+    const addStartingBodyButton = select("#add-item-btn");
+    addStartingBodyButton.mousePressed(addNewBodyToTable);
+    noLoop();
+}
+
+function addNewBodyToTable() {
+    const x = select("#pos-x").value();
+    const y = select("#pos-y").value();
+    const z = select("#pos-z").value();
+
+    const vx = select("#vel-x").value();
+    const vy = select("#vel-y").value();
+    const vz = select("#vel-z").value();    
+
+    const mass = select("#mass").value();  
+
+    const r = select("#col-r").value();  
+    const g = select("#col-g").value();  
+    const b = select("#col-b").value();  
+
+    // Render the row
+    const newRow = createElement("tr");
+    newRow.parent("#input-table-body");
+
+    createElement("td", `(${x}, ${y}, ${z})`).parent(newRow);
+    createElement("td", `(${vx}, ${vy}, ${vz})`).parent(newRow);
+    createElement("td", mass).parent(newRow);
+    createElement("td").parent(newRow).style('background-color', color(r, g, b));
+    createButton("Remove Body").parent(newRow);
+
+    bodies.push(
+        new BodyBuilder()
+            .setPosition(x, y, z)
+            .setVelocity(vx, vy, vz)
+            .setMass(mass)
+            .setColor(color(r, g, b))
+            .build()
+    )
 }

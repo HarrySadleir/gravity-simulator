@@ -34,41 +34,35 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody class="input-table-body">
-                    <tr>
-                        <th>something</th>
-                        <th>something</th>
-                        <th>something</th>
-                        <th>something</th>
-                        <th><button>Remove Body</button></th>
-                    </tr>
+                <tbody id="input-table-body">
+                    <!--Rows will be added here by the user-->
                 </tbody>
                 <tfoot>
                     <tr>
                         <td>
                             <div class="input-cell">
-                                <input id="pos-x"/>
-                                <input id="pos-y"/>
-                                <input id="pos-z"/>
+                                <input type="number" id="pos-x" required/>
+                                <input type="number" id="pos-y" required/>
+                                <input type="number" id="pos-z" required/>
                             </div>  
                         </td>
                         <td>
                             <div class="input-cell">
-                                <input id="vel-x"/>
-                                <input id="vel-y"/>
-                                <input id="vel-z"/>
+                                <input type="number" id="vel-x" required/>
+                                <input type="number" id="vel-y" required/>
+                                <input type="number" id="vel-z" required/>
                             </div>
                         </td>
                         <td>
                             <div class="input-cell">
-                                <input id="mass"/>
+                                <input type="number" id="mass" required/>
                             </div>
                         </td>
                         <td>
                             <div class="input-cell">
-                                <input id="col-r"/>
-                                <input id="col-g"/>
-                                <input id="col-b"/>
+                                <input type="number" id="col-r" required/>
+                                <input type="number" id="col-g" required/>
+                                <input type="number" id="col-b" required/>
                             </div>
                         </td>
                         <td>
