@@ -90,7 +90,10 @@ function addNewBodyToTable() {
     createElement("td", `(${vx}, ${vy}, ${vz})`).parent(newRow);
     createElement("td", mass).parent(newRow);
     createElement("td").parent(newRow).style('background-color', color(r, g, b));
-    createButton("Remove Body").parent(newRow);
+    
+    createButton("Remove Body").parent(
+        createElement("td").parent(newRow)
+    ).style("width", "130px");
 
     bodies.push(
         new BodyBuilder()
