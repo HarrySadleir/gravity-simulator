@@ -14,3 +14,49 @@ body {
     /* This centers our sketch vertically. */
     align-items: center;
 }
+
+/* Initial Values Table */
+#initial-values-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#initial-values-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+#initial-values-table td,
+#initial-values-table th {
+    padding: 12px 15px;
+}
+
+#initial-values-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#initial-values-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+#initial-values-table tfoot tr:last-of-type {
+    border-bottom: thin solid #009879;
+}
+
+#initial-values-table .input-cell {
+    display: flex;
+    justify-content: center;
+}
+
+#initial-values-table input {
+    width: 50px;
+}
+
+#initial-values-table .table-title {
+    text-align: center;
+}

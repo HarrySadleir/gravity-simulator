@@ -18,9 +18,65 @@
 			<div id="app">
                 <!-- Our sketch will go here! -->
             </div>
+            <p>
+                Control the camera through the mouse or trackpad
+            </p>
+            <table id="initial-values-table">
+                <thead>
+                    <tr class="table-title">
+                        <th colspan="5">Initial Values</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Position (x, y, z)</th>
+                        <th scope="col">Velocity (vx, vy, vz)</th>
+                        <th scope="col">Mass</th>
+                        <th scope="col">Color (r, g, b)</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="input-table-body">
+                    <tr>
+                        <th>something</th>
+                        <th>something</th>
+                        <th>something</th>
+                        <th>something</th>
+                        <th><button>Remove Body</button></th>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <div class="input-cell">
+                                <input id="pos-x"/>
+                                <input id="pos-y"/>
+                                <input id="pos-z"/>
+                            </div>  
+                        </td>
+                        <td>
+                            <div class="input-cell">
+                                <input id="vel-x"/>
+                                <input id="vel-y"/>
+                                <input id="vel-z"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-cell">
+                                <input id="mass"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-cell">
+                                <input id="col-r"/>
+                                <input id="col-g"/>
+                                <input id="col-b"/>
+                            </div>
+                        </td>
+                        <td>
+                            <button id="add-item-btn">Add Starting Body</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-        <p>
-            Control the camera through the mouse or trackpad
-        </p>
     </body>
 </html>
