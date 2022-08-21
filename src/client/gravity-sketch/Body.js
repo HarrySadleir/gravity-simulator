@@ -9,8 +9,15 @@ class Body {
     _rad;  // number,      m
     _color;// P5.Color
 
+    // For reseting to the starting position
+    _initialPos;
+    _initialVel;
+
     // For drawing the previous path of the body
     _path; // P5.Vector[], m
+
+    // For easy removing from the list
+    _id;    // number
 
     constructor(pos, vel, mass, color) {
         this._pos = pos;
@@ -18,9 +25,17 @@ class Body {
         this._mass = mass;
         this._color = color;
 
+        this._initialPos = pos.copy();
+        this._initialVel = vel.copy();
+
         this._rad = Body._radMultiplier * pow(mass, 1/3);
         this._acc = createVector();
         this._path = []; 
+        this._id = uidGenerator.nextUUID();
+    }
+
+    getId() {
+        return this._id;
     }
 
     show() {
@@ -66,6 +81,12 @@ class Body {
 
         if(this._path.length > 1000) this._path.shift();
         this._path.push(this._pos.copy());
+    }
+
+    resetToInitialValue() {
+        this._pos = this._initialPos.copy();
+        this._vel = this._initialVel.copy();
+        this._path = [];
     }
 
     _getDistance(other) {
