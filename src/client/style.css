@@ -29,7 +29,6 @@ body {
 /* Initial Values Table */
 #initial-values-table {
     margin: auto;
-
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
