@@ -85,9 +85,26 @@ function startOrResetSimulation() {
         this.html("Start Simulation");
     } else if (this.html() === "Start Simulation") {
         bodies = [...nextBodies];
+        adjustFrameOfReference();
         simulationIsRunning = true;
         this.html("Reset Simulation");
     }
+}
+
+// Using the formula total_velocity = sum(m*v)/total_mass, compute total velocity
+// and subtract it off from each body's velocity
+function adjustFrameOfReference() {
+    let total_mass = 0;                  //number
+    let total_momentum = createVector(); //vector
+
+    for (let i in bodies) {
+        const body = bodies[i];
+        total_mass += body.getMass();
+        total_momentum.add(body.getMomentum());
+    }
+
+    const total_velocity = p5.Vector.div(total_momentum, total_mass);
+    for (let i in bodies) bodies[i].subtractVelocity(total_velocity);
 }
 
 function addNewBodyToTable() {

@@ -38,6 +38,14 @@ class Body {
         return this._id;
     }
 
+    getMomentum() {
+        return p5.Vector.mult(this._vel, this._mass);
+    }
+
+    getMass() {
+        return this._mass;
+    }
+
     show() {
         push();
         translate(this._pos);
@@ -81,6 +89,10 @@ class Body {
 
         if(this._path.length > 1000) this._path.shift();
         this._path.push(this._pos.copy());
+    }
+
+    subtractVelocity(velVector) {
+        this._vel = this._vel.sub(velVector);
     }
 
     resetToInitialValue() {
