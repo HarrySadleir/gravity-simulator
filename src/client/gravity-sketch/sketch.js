@@ -121,7 +121,9 @@ function addNewBodyToTable() {
         .setColor(color(Number(r.value()), Number(g.value()), Number(b.value())))
         .build()
 
-    createButton("Remove Body").parent(createElement("td").parent(newRow))   
+    createButton("Remove Body")
+        .parent(createElement("td")
+        .parent(newRow))   
         .style("width", "130px")
         .mousePressed(() => {
             // Remove the row from the html
