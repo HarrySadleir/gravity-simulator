@@ -1,2 +1,2 @@
-# personal-website
-A personal website to demonstrate my programming skills
+# gravity-simulator
+Simulate several gravitational bodies in 3D space, tracing their paths as they go.
