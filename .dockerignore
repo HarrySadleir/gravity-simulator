@@ -1,1 +1,13 @@
+## Ignore node_modules
 node_modules
+
+Dockerfile
+README.md
+docker-compose.*
+LICENSE.txt
+vercel.json
+
+.dockerignore
+.git
+.gitignore
+.DS_Store

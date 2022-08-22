@@ -5,7 +5,8 @@
   "main": "./src/server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server/index.js"
+    "start": "node ./src/server/index.js",
+    "dev": "nodemon ./src/server/index.js"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/HarrySadleir/gravity-simulator/issues"
   },
-  "homepage": "https://github.com/HarrySadleir/gravity-simulator#readme"
+  "homepage": "https://github.com/HarrySadleir/gravity-simulator#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
