@@ -27,4 +27,8 @@ fi
 
 echo "\nRunning compose command: \n${command} \n"
 eval ${command}
-echo "\nTo stop the containers, call 'docker-compose down'"
+
+blue='\033[0;32m'
+normal='\033[0m'
+echo -e "\nNow running on ${blue}http://localhost:3000"
+echo -e "${normal}\nTo stop the containers, call ${blue}docker-compose down"
